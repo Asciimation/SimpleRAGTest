@@ -21,7 +21,7 @@ This project demonstrates a basic Retrieval-Augmented Generation (RAG) pipeline 
 
 3. **Add your PDF files:**
 
-   Place PDF files in the `Riley Register Bulletins/Subset/` directory.
+   Place PDF files in the `Context Data/` directory.
 
 4. **Start your Ollama server** and ensure the required model (e.g., `llama3.2:latest`) is available.
 5. **Run the main script:**
@@ -34,7 +34,7 @@ This project demonstrates a basic Retrieval-Augmented Generation (RAG) pipeline 
 
 - `SimpleRAGTest.py`: Main script for loading PDFs, building the vector store, querying, and evaluating answers.
 - `requirements.txt`: Python dependencies.
-- `Riley Register Bulletins/Subset/`: Directory containing PDF source documents.
+- `Context Data/Subset/`: Directory containing PDF source documents.
 - `faiss_index/`: Directory where the FAISS vector store is saved.
 
 ## How It Works
@@ -56,3 +56,63 @@ This project demonstrates a basic Retrieval-Augmented Generation (RAG) pipeline 
 ## License
 
 MIT
+
+# SimpleRAGTest Inline
+
+This project demonstrates a simple Retrieval-Augmented Generation (RAG) pipeline using LangChain, written in a clear, inline style for easy understanding.
+
+## What does it do?
+- Loads a directory of PDF documents.
+- Splits the documents into manageable text chunks.
+- Converts these chunks into vector embeddings using a HuggingFace model.
+- Stores the vectors in a FAISS vector database for fast similarity search.
+- When you ask a question, retrieves the most relevant chunks from the database.
+- Uses a Large Language Model (LLM) to generate an answer based on the retrieved context and question.
+- Compares the generated answer to a gold standard answer using similarity scoring.
+
+## How it works
+1. **Document Loading**: Reads all PDF files from a specified directory.
+2. **Chunking**: Splits each document into overlapping text chunks using `RecursiveCharacterTextSplitter`.
+3. **Embedding**: Converts each chunk into a vector using HuggingFaceEmbeddings (AI #1).
+4. **Vector Store**: Stores all vectors in a FAISS database for efficient retrieval.
+5. **Retrieval**: For a given query, retrieves the top-k most similar chunks from the vector store.
+6. **LLM Answering**: Passes the retrieved context and the question to an LLM (AI #2) to generate an answer.
+7. **Evaluation**: Compares the generated answer to a standard answer using SentenceTransformer (AI #3) and cosine similarity.
+
+## Key Technologies
+- **LangChain**: For chaining together document loading, splitting, retrieval, and LLM calls.
+- **FAISS**: For fast vector similarity search.
+- **HuggingFaceEmbeddings**: For turning text into vectors.
+- **OllamaLLM**: For generating answers from context.
+- **SentenceTransformer**: For evaluating answer similarity.
+
+## How to Run
+1. Place your PDF files in the `Context Data` directory.
+2. Install dependencies:
+   ```sh
+   pip install -r requirements.txt
+   ```
+3. Run the script:
+   ```sh
+   python SimpleRAGTest_inline.py
+   ```
+
+## Notes
+- The first run may take a long time as it builds the vector store. Subsequent runs are much faster.
+- The script is written inline for clarity, with comments explaining each step.
+- You can change the query in the script to ask different questions.
+- The LLM may generate different answers each time due to its probabilistic nature.
+
+## Example Query
+```
+What is one special fact about the Riley Nine cylinder head?
+```
+
+## Example Output
+- Retrieved context chunks from the PDFs
+- Generated answer from the LLM
+- Similarity score compared to a gold standard answer
+
+---
+
+This project is intended for educational and experimental purposes. For production use, consider modularizing the code and adding error handling, logging, and more robust evaluation.

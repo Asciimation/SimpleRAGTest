@@ -86,8 +86,8 @@ else:
 
 # Query the vector store with a test question to retrieve context.
 # This query is what a user might type into a chatbot.
-#query = "What was the Riley 9 Brooklands, when was it produced and by whom?"
-query = "What shape are the combustion chambers in a Riley Nine cylinder head?"
+query = "What was the Riley 9 Brooklands, when was it produced and by whom?"
+#query = "What shape are the combustion chambers in a Riley Nine cylinder head?"
 
 # We use the retriever to return k chunks based on the query.
 # The retriever is deterministic, we always get the same chunks for the qiven query no matter how 
@@ -163,8 +163,8 @@ print_with_time("Loading SentenceTransformer model for similarity testing...")
 model = SentenceTransformer('sentence-transformers/all-MiniLM-L6-v2')
 
 # Our gold standard answer.
-#standard_answer = "The Riley Nine Brooklands was a car produced by Riley Motors between 1928 and 1932."
-standard_answer = "The Riley Nine combustion chambers are hemispherical."
+standard_answer = "The Riley Nine Brooklands was a car produced by Riley Motors between 1928 and 1932."
+#standard_answer = "The Riley Nine combustion chambers are hemispherical."
 print()
 
 # Compute the cosine similarity between the given answer and the standard answer.
