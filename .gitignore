@@ -61,7 +61,8 @@ coverage.xml
 faiss_index/
 
 # Context data files
-Context Data/
+Context Data/*
+!Context Data/.gitkeep
 
 # OS files
 .DS_Store
