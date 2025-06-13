@@ -90,6 +90,7 @@ query = "What was the Riley 9 Brooklands, when was it produced and by whom?"
 #query = "What shape are the combustion chambers in a Riley Nine cylinder head?"
 
 # We use the retriever to return k chunks based on the query.
+# This is just here to show how it works. We later do this again as part of the chain.
 # The retriever is deterministic, we always get the same chunks for the qiven query no matter how 
 # many times we call it!   
 print_with_time("Use retriever to get chunks...")
