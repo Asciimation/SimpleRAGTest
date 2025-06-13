@@ -60,8 +60,8 @@ coverage.xml
 # FAISS index files
 faiss_index/
 
-# Riley Register Bulletins PDFs (optional, if you don't want to track large data)
-Riley Register Bulletins/Subset/*.pdf
+# Context data files
+Context Data/
 
 # OS files
 .DS_Store
