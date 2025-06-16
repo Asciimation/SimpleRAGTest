@@ -21,7 +21,7 @@ This project demonstrates a basic Retrieval-Augmented Generation (RAG) pipeline 
 
 3. **Add your PDF files:**
 
-   Place PDF files in the `Context Data/` directory.
+   Place PDF files in a `Context Data` directory in the parent directory of this code.
 
 4. **Start your Ollama server** and ensure the required model (e.g., `llama3.2:latest`) is available.
 5. **Run the main script:**
