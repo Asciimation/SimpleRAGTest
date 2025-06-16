@@ -21,7 +21,7 @@ This project demonstrates a basic Retrieval-Augmented Generation (RAG) pipeline 
 
 3. **Add your PDF files:**
 
-   Place PDF files in the `Context Data/` directory.
+   Place PDF files in a `Context Data` directory in the parent directory of this code.
 
 4. **Start your Ollama server** and ensure the required model (e.g., `llama3.2:latest`) is available.
 5. **Run the main script:**
@@ -49,6 +49,7 @@ This project demonstrates a basic Retrieval-Augmented Generation (RAG) pipeline 
 ## Notes
 
 - You need to provide your own data source for vectorising and update the script to match.
+- This lives in the parent directory of the code in a folder called 'Context Data'.
 - The script will create a FAISS vector store in the `faiss_index` directory if it does not exist.
 - You can change the query in `SimpleRAGTest.py` to test different questions.
 - The script prints out the retrieved documents and the generated answer, along with a similarity score.

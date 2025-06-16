@@ -21,7 +21,7 @@ def print_with_time(message):
 # It is written inline to make it easier for non coders to read through.
 
 # Location of the PDF files to build our vector store from.
-directory = os.path.join(os.getcwd(), "Context Data")
+directory = os.path.join(os.path.dirname(os.getcwd()), "Context Data")
 vector_store_path = "faiss_index"
 print_with_time(f"Current path: {os.getcwd()}")
 
@@ -44,7 +44,7 @@ if not os.path.exists(os.path.join(vector_store_path, "index.faiss")):
                 print_with_time("Skipping this PDF...")
     print_with_time(f"Total number of pages loaded: {len(docs)}")
 
-    # Split documentsinto chunks (blocks of text) based on character sizes.
+    # Split documents into chunks (blocks of text) based on character sizes.
     # The chunk size and overlap can be changed and control the size of the text chunks.
     # The chunks are the pieces of context we use to answer questions.
     # Different methods could be used here: splitting into tokens, sentences, paragraphs, etc.
