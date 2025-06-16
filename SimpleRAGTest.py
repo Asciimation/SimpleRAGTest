@@ -113,7 +113,7 @@ def print_with_time(message):
 
 
 def main():
-    directory = "C:\\Development\\AIExperiments\\SimpleRAG\\Context"
+    directory = os.path.join(os.path.dirname(os.getcwd()), "Context Data")
     retriever = get_or_create_retriever(directory)
     query = "What was the Riley 9 Brooklands, when was it produced and by whom?"
     print_with_time("Demonstrate retrieval...")
