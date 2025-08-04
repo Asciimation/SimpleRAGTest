@@ -3,9 +3,6 @@ __pycache__/
 *.py[cod]
 *$py.class
 
-# C extensions
-*.so
-
 # Distribution / packaging
 .Python
 env/
@@ -41,29 +38,21 @@ coverage.xml
 .hypothesis/
 .pytest_cache/
 
-# Jupyter Notebook
-.ipynb_checkpoints
+# Virtual Environment
+venv/
+.env/
+.venv/
 
-# pyenv
-.python-version
-
-# VS Code
+# IDE specific files
 .vscode/
+.idea/
+*.swp
+*.swo
 
-# mypy
-.mypy_cache/
-.dmypy.json
+# Generated feedback data
+FeedbackData/RawFeedback.txt
 
-# Pyre type checker
-.pyre/
-
-# FAISS index files
-faiss_index/
-
-# Context data files
-Context Data/*
-!Context Data/.gitkeep
-
-# OS files
+# OS specific files
 .DS_Store
 Thumbs.db
+desktop.ini
